@@ -28,6 +28,7 @@ RUN set -x \
       icu-dev \
       libzip-dev \
       openssl \
+      openssh-keygen \
       nodejs \
       nodejs-npm \
       bash \
