@@ -45,3 +45,10 @@ services:
       dockerfile: docker/selenium/Dockerfile
     ports:
       - '4444:4444'
+  terraform:
+    build:
+      context: .
+      dockerfile: docker/terraform/Dockerfile
+    volumes:
+      - ./terraform:/terraform/
+    tty: true

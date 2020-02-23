@@ -16,6 +16,9 @@ COPY . .
 
 # apk alpineのパッケージマネジャー
 # とりあえずgitとnpmとvimが使えればいいかな
+# git openssh,openssh-keygen,vim,gitが必要
+# npm nodejs, nodejs-npmが必要
+# bash,curlコマンドも要
 RUN set -x \
     && apk update && \
     apk add --update --no-cache --virtual=.build-dependencies \
@@ -38,6 +41,7 @@ RUN set -x \
 RUN docker-php-ext-install \
       pdo_mysql \
       zip
+# composerをインストール
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN set -x \
     && composer update \
@@ -50,7 +54,7 @@ ARG GID=991
 ARG GNAME=www
 
 # php artisan config:clear キャッシュクリアー
-# ２行目以下　ユーザーに権限付与
+# ３行目以下　ユーザーに権限付与
 RUN set -x \
     && composer install --no-progress --no-dev \
     && php artisan config:clear \
