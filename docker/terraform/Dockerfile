@@ -1,7 +1,11 @@
 FROM alpine:3.10
 
+# 最新バージョン
 ARG terraform_version="0.12.21"
 
+# Terraformインストール用のコマンドを使えるようにwget unzip curlをインストール
+# Terraformをインストールして解凍する
+# ディレクトリを作成する
 RUN apk update --no-cache \
     && apk add --no-cache \
         wget \
