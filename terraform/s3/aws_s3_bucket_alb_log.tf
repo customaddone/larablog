@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "artifact" {
-  bucket = "alb-log"
+resource "aws_s3_bucket" "alb_log" {
+  bucket = "larablog-alb-log"
 
   lifecycle_rule {
     enabled = true
@@ -11,5 +11,5 @@ resource "aws_s3_bucket" "artifact" {
 }
 
 output "alb_log_id" {
-  value = "${aws_s3_bucket.artifact.id}"
+  value = "${aws_s3_bucket.alb_log.id}"
 }
