@@ -124,8 +124,8 @@ jobs:
       - run:
           name: deploy # 新しいタスク定義ファイルを作成し、ECSに反映させる
           command: |
-            aws ecs describe-task-definition --task-definition example | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > task_definition.json
-            aws ecs register-task-definition --family example --cli-input-json file://task_definition.json
+            aws ecs describe-task-definition --task-definition larablog | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > task_definition.json
+            aws ecs register-task-definition --family larablog --cli-input-json file://task_definition.json
             aws ecs update-service --cluster larablog-ecs-cluster --service larablog --task-definition larablog
       #- run:
           #name: migration # マイグレーションタスクを実行
@@ -135,10 +135,10 @@ workflows:
   version: 2
   test:
     jobs:
-      - test
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
+      #- test
+      - deploy
+          #requires:
+          #  - test
+          #filters:
+            #branches:
+              #only: master
