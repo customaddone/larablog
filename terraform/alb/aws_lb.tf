@@ -21,6 +21,10 @@ resource "aws_lb" "example" {
   ]
 }
 
+output "alb_dns_name" {
+  value = aws_lb.example.dns_name
+}
+
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
