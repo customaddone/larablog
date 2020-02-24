@@ -1,12 +1,12 @@
 [
   {
     "name": "nginx",
-    "image": "183344260146.dkr.ecr.ap-northeast-1.amazonaws.com/example:latest",
+    "image": "183344260146.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:latest",
     "cpu": 128,
     "memoryReservation": 256,
     "essential": true,
     "links": [
-      "app"
+      "php"
     ],
     "portMappings": [
       {
@@ -18,25 +18,25 @@
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
-        "awslogs-group": "example",
+        "awslogs-group": "nginx",
         "awslogs-region": "ap-northeast-1",
         "awslogs-stream-prefix": "service"
       }
     }
   },
   {
-     "name": "app",
-     "image": "183344260146.dkr.ecr.ap-northeast-1.amazonaws.com/app:latest",
+     "name": "php",
+     "image": "183344260146.dkr.ecr.ap-northeast-1.amazonaws.com/php:latest",
      "cpu": 128,
      "memoryReservation": 256,
      "essential": true,
      "logConfiguration": {
        "logDriver": "awslogs",
        "options": {
-         "awslogs-group": "app",
+         "awslogs-group": "php",
          "awslogs-region": "ap-northeast-1",
-         "awslogs-stream-prefix": "app"
+         "awslogs-stream-prefix": "php"
        }
-     },
+     }
    }
 ]

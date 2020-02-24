@@ -1,9 +1,9 @@
 resource "aws_ecs_cluster" "sample-ecs-cluster" {
-  name = "sample-ecs-cluster"
+  name = "larablog-ecs-cluster"
 }
 
 resource "aws_ecs_service" "rails-service" {
-  name            = "example"
+  name            = "larablog"
   cluster         = aws_ecs_cluster.sample-ecs-cluster.id
   task_definition = aws_ecs_task_definition.sample-task.arn
   desired_count   = 1
@@ -11,7 +11,7 @@ resource "aws_ecs_service" "rails-service" {
 
   load_balancer {
     target_group_arn = data.terraform_remote_state.alb.outputs.lb_target_group_arn
-    container_name   = "example"
+    container_name   = "nginx"
     container_port   = "80"
   }
 }
@@ -21,7 +21,7 @@ data "template_file" "service_container_definition" {
 }
 
 resource "aws_ecs_task_definition" "sample-task" {
-  family = "example"
+  family = "larablog"
   container_definitions = data.template_file.service_container_definition.rendered
   task_role_arn = data.terraform_remote_state.iam.outputs.ecs_role_arn
   execution_role_arn       = data.terraform_remote_state.iam.outputs.ecs_role_arn
@@ -39,11 +39,10 @@ resource "aws_ecs_task_definition" "sample-app-migrate" {
     network_mode  = "bridge"
 }
 
-
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "customaddone-private"
+    bucket = "larablog-code-collection"
     key    = "sample/vpc/terraform.tfstate"
     region = "ap-northeast-1"
   }
@@ -52,7 +51,7 @@ data "terraform_remote_state" "vpc" {
 data "terraform_remote_state" "alb" {
   backend = "s3"
   config = {
-    bucket = "customaddone-private"
+    bucket = "larablog-code-collection"
     key    = "sample/alb/terraform.tfstate"
     region = "ap-northeast-1"
   }
@@ -61,7 +60,7 @@ data "terraform_remote_state" "alb" {
 data "terraform_remote_state" "iam" {
   backend = "s3"
   config = {
-    bucket = "customaddone-private"
+    bucket = "larablog-code-collection"
     key    = "sample/iam/terraform.tfstate"
     region = "ap-northeast-1"
   }

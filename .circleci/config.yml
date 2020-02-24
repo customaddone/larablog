@@ -121,12 +121,12 @@ jobs:
             wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
             mv jq-linux64 jq
 
-      #- run:
-          #name: deploy # 新しいタスク定義ファイルを作成し、ECSに反映させる
-          #command: |
-            #aws ecs describe-task-definition --task-definition example | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > task_definition.json
-            #aws ecs register-task-definition --family example --cli-input-json file://task_definition.json
-          #  aws ecs update-service --cluster sample-ecs-cluster --service example --task-definition example
+      - run:
+          name: deploy # 新しいタスク定義ファイルを作成し、ECSに反映させる
+          command: |
+            aws ecs describe-task-definition --task-definition example | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > task_definition.json
+            aws ecs register-task-definition --family example --cli-input-json file://task_definition.json
+            aws ecs update-service --cluster larablog-ecs-cluster --service larablog --task-definition larablog
       #- run:
           #name: migration # マイグレーションタスクを実行
           #command: aws ecs run-task --cluster sample-ecs-cluster --task-definition sample-app-migrate

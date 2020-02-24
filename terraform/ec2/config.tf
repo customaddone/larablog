@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "larablog-code-collection"
-    key    = "sample/ecs/terraform.tfstate"
+    key    = "sample/ec2/terraform.tfstate"
     region = "ap-northeast-1"
   }
 }
