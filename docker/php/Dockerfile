@@ -44,7 +44,7 @@ RUN docker-php-ext-install \
 # composerをインストール
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN set -x \
-    && composer update \
+    && composer update --no-dev\
     && composer install --no-autoloader --no-progress --no-dev
 
 # 適当にユーザーを作っとく
