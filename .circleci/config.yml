@@ -104,14 +104,14 @@ jobs:
           name: build image
           command: |
             $(aws ecr get-login --no-include-email --region ap-northeast-1)
-            docker build -f ./docker/php/Dockerfile -t ${ECR_DOMAIN_APP}:$CIRCLE_SHA1 -t ${ECR_DOMAIN_APP}:latest .
+            docker build -f ./docker/php/Dockerfile -t ${ECR_DOMAIN_PHP}:$CIRCLE_SHA1 -t ${ECR_DOMAIN_PHP}:latest .
             docker build -f ./docker/nginx/Dockerfile -t ${ECR_DOMAIN_NGINX}:$CIRCLE_SHA1 -t ${ECR_DOMAIN_NGINX}:latest  .
 
       - run:
           name: Push docker image
           command: |
-            docker push ${ECR_DOMAIN_APP}:$CIRCLE_SHA1
-            docker push ${ECR_DOMAIN_APP}:latest
+            docker push ${ECR_DOMAIN_PHP}:$CIRCLE_SHA1
+            docker push ${ECR_DOMAIN_PHP}:latest
             docker push ${ECR_DOMAIN_NGINX}:$CIRCLE_SHA1
             docker push ${ECR_DOMAIN_NGINX}:latest
 
@@ -136,9 +136,9 @@ workflows:
   test:
     jobs:
       - test
-      #- deploy
-          #requires:
-          #  - test
-          #filters:
-            #branches:
-              #only: master
+      - deploy
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
