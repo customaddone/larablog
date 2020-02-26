@@ -5,7 +5,7 @@ data "template_file" "user_data" {
 #セキュリティグループ
 module "aws_security_group" {
   source      = "./aws_security_group"
-  name        = "aws_security_group"
+  name        = "larablog_security_group"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 80
   cidr_blocks = ["10.0.0.0/16"]
@@ -13,7 +13,7 @@ module "aws_security_group" {
 
 module "aws_security_group_ssh" {
   source      = "./aws_security_group"
-  name        = "aws_security_group_ssh"
+  name        = "larablog_security_group_ssh"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 22
   cidr_blocks = ["0.0.0.0/0"]
@@ -27,7 +27,7 @@ resource "aws_instance" "sample" {
   subnet_id                   = data.terraform_remote_state.vpc.outputs.private_0_id
   user_data                   = data.template_file.user_data.rendered
   associate_public_ip_address = true
-  key_name = aws_key_pair.rdskey.key_name
+  key_name = "rdskey"
 
   vpc_security_group_ids = [
     module.aws_security_group.security_group_id,
@@ -38,11 +38,6 @@ resource "aws_instance" "sample" {
     volume_size = "20"
     volume_type = "gp2"
   }
-}
-
-resource "aws_key_pair" "rdskey" {
-  key_name = "larablogrdskey"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDB+jaHRY/nfP6KSpQEpzdimTQQDifBjemivLZzxbc6TetV3Y3zt0KgffJ7nY/KjkAIblmt67toK5cih7XbOf6poWKvuc1KF9/+N4vM18MZ8Q+TK4DylYq52pVDQLvyW76CHlbkFytcTbGQpD6CKP21ZYUyO6HeYl99x81vRc1g41dzfQnGWS2bouoOVNFWw4dH9fBTJjkiP78D13hD1iJvzwOJGXR3UenconIMBly/9w9DnvqeJiVkJd00SpCheRt92XAkwts9kOF9lg/fUBsWSx79E0jHAwjdofJGhhnRqIWp6o/2099QprrKi1bPQ+W/qcqPQnZy9WWrUccCHSBl"
 }
 
 data "terraform_remote_state" "vpc" {
