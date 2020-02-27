@@ -52,10 +52,6 @@
          "value": "larablog"
        },
        {
-         "name": "DB_HOST",
-         "value": "127.0.0.1"
-       },
-       {
          "name": "DB_PASSWORD",
          "value": "topsecret"
        },
