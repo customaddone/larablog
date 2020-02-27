@@ -40,29 +40,29 @@
      },
      "environment":[
        {
-        "name": "APP_KEY",
-        "value": "base64:dXXL1R2u411HNE8nwq8zYGDwjpMKGX1+sD5pVWl+Kx8="
-      },
-      {
-        "name": "DB_CONNECTION",
-        "value": "mysql"
-      },
-      {
-        "name": "DB_DATABASE",
-        "value": "larablog"
-      },
-      {
-        "name": "DB_HOST",
-        "value": "127.0.0.1"
-      },
-      {
-        "name": "DB_PASSWORD",
-        "value": "topsecret"
-      },
-      {
-        "name": "DB_USERNAME",
-        "value": "root"
-      }
+         "name": "APP_KEY",
+         "value": "base64:dXXL1R2u411HNE8nwq8zYGDwjpMKGX1+sD5pVWl+Kx8="
+       },
+       {
+         "name": "DB_CONNECTION",
+         "value": "mysql"
+       },
+       {
+         "name": "DB_DATABASE",
+         "value": "larablog"
+       },
+       {
+         "name": "DB_HOST",
+         "value": "127.0.0.1"
+       },
+       {
+         "name": "DB_PASSWORD",
+         "value": "topsecret"
+       },
+       {
+         "name": "DB_USERNAME",
+         "value": "root"
+       }
      ]
    }
 ]

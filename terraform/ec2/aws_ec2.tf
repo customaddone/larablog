@@ -27,7 +27,7 @@ resource "aws_instance" "sample" {
   instance_type               = "t2.small"
   monitoring                  = true
   iam_instance_profile        = data.terraform_remote_state.iam.outputs.ecs_instance_profile_name
-  subnet_id                   = data.terraform_remote_state.vpc.outputs.private_0_id
+  subnet_id                   = data.terraform_remote_state.vpc.outputs.public_0_id
   user_data                   = data.template_file.user_data.rendered
   associate_public_ip_address = true
   key_name = "rdskey"
