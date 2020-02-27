@@ -13,8 +13,6 @@ resource "aws_iam_role_policy_attachment" "task-role-attachment" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
-
-
 #ec2用
 resource "aws_iam_role" "ecs_instance_role" {
   name = "larablog-ecs_instance_role"

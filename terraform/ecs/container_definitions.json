@@ -1,12 +1,12 @@
 [
   {
-    "name": "nginx",
+    "name": "example",
     "image": "183344260146.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:latest",
     "cpu": 128,
     "memoryReservation": 256,
     "essential": true,
     "links": [
-      "php"
+      "app"
     ],
     "portMappings": [
       {
@@ -18,14 +18,14 @@
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
-        "awslogs-group": "nginx",
+        "awslogs-group": "example",
         "awslogs-region": "ap-northeast-1",
         "awslogs-stream-prefix": "service"
       }
     }
   },
   {
-     "name": "php",
+     "name": "app",
      "image": "183344260146.dkr.ecr.ap-northeast-1.amazonaws.com/php:latest",
      "cpu": 128,
      "memoryReservation": 256,
@@ -33,35 +33,15 @@
      "logConfiguration": {
        "logDriver": "awslogs",
        "options": {
-         "awslogs-group": "php",
+         "awslogs-group": "app",
          "awslogs-region": "ap-northeast-1",
-         "awslogs-stream-prefix": "php"
+         "awslogs-stream-prefix": "app"
        }
      },
      "environment":[
        {
-         "name": "APP_KEY",
-         "value": "base64:dXXL1R2u411HNE8nwq8zYGDwjpMKGX1+sD5pVWl+Kx8="
-       },
-       {
-         "name": "DB_CONNECTION",
-         "value": "mysql"
-       },
-       {
-         "name": "DB_DATABASE",
-         "value": "larablog"
-       },
-       {
-         "name": "DB_HOST",
-         "value": "example.cw5hony92ugy.ap-northeast-1.rds.amazonaws.com"
-       },
-       {
-         "name": "DB_PASSWORD",
-         "value": "topsecret"
-       },
-       {
-         "name": "DB_USERNAME",
-         "value": "root"
+        "name": "APP_KEY",
+        "value": "base64:dXXL1R2u411HNE8nwq8zYGDwjpMKGX1+sD5pVWl+Kx8="
        }
      ]
    }

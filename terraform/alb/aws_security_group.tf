@@ -1,7 +1,7 @@
 #http用に80番ポートを許可
 module "http_sg" {
   source      = "./aws_security_group_module"
-  name        = "http-sg"
+  name        = "larablog-http-sg"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 80
   cidr_blocks = ["0.0.0.0/0"]
@@ -10,7 +10,7 @@ module "http_sg" {
 #http用に443番ポートを許可
 module "https_sg" {
   source      = "./aws_security_group_module"
-  name        = "https-sg"
+  name        = "larablog-https-sg"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 443
   cidr_blocks = ["0.0.0.0/0"]
@@ -19,7 +19,7 @@ module "https_sg" {
 #http→https用に8080番ポートを許可
 module "http_redirect_sg" {
   source      = "./aws_security_group_module"
-  name        = "http-redirect-sg"
+  name        = "larablog-http-redirect-sg"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 8080
   cidr_blocks = ["0.0.0.0/0"]

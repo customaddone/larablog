@@ -1,3 +1,6 @@
+#コンテナオーケストレーション
+#ホストサーバーを束ねるECSクラスタ、コンテナの実行単位となるタスク、コンテナを長時間稼働させるECSサービス
+#clusterは名前を指定するだけ
 data "template_file" "user_data" {
   template = file("./user_data.tpl")
 }
@@ -5,7 +8,7 @@ data "template_file" "user_data" {
 #セキュリティグループ
 module "aws_security_group" {
   source      = "./aws_security_group"
-  name        = "larablog_security_group"
+  name        = "larablog_ec2"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 80
   cidr_blocks = ["10.0.0.0/16"]
@@ -13,7 +16,7 @@ module "aws_security_group" {
 
 module "aws_security_group_ssh" {
   source      = "./aws_security_group"
-  name        = "larablog_security_group_ssh"
+  name        = "larablog_ec2_ssh"
   vpc_id      = data.terraform_remote_state.vpc.outputs.example_id
   port        = 22
   cidr_blocks = ["0.0.0.0/0"]
