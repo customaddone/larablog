@@ -31,12 +31,11 @@ RUN set -x \
     && docker-php-ext-install pdo_mysql zip \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer update --no-dev \
-    && composer install --no-autoloader --no-progress --no-dev \
+    && composer install --no-progress --no-dev \
     && npm install \
     && npm run dev
 
 RUN set -x \
-    && composer install --no-progress --no-dev \
     && php artisan config:clear \
     && addgroup ${GNAME} -g ${GID} \
     && adduser -D -G ${GNAME} -u ${UID} ${UNAME} \
