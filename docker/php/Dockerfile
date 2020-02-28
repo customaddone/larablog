@@ -32,7 +32,7 @@ RUN set -x \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer update --no-dev \
     && composer install --no-autoloader --no-progress --no-dev \
-    && npm run install \
+    && npm install \
     && npm run dev
 
 RUN set -x \
