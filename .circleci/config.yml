@@ -136,7 +136,7 @@ workflows:
   test:
     jobs:
       - test
-      - deploy
+      - deploy:
           requires:
             - test
           filters:
