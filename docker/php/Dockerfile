@@ -11,6 +11,8 @@ WORKDIR $WORKDIR
 COPY ./docker/php/php.ini /usr/local/etc/php
 COPY composer.json composer.lock ${WORKDIR}/
 
+COPY . .
+
 RUN set -x \
     && apk update && \
     apk add --update --no-cache --virtual=.build-dependencies \
@@ -22,11 +24,14 @@ RUN set -x \
     apk add --update --no-cache \
       icu-dev \
       libzip-dev \
+      nodejs \
+      nodejs-npm \
+      bash \
+      vim \
     && docker-php-ext-install pdo_mysql zip \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && composer update --no-dev \
     && composer install --no-autoloader --no-progress --no-dev
-
-COPY . .
 
 RUN set -x \
     && composer install --no-progress --no-dev \
