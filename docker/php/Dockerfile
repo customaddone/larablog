@@ -24,16 +24,12 @@ RUN set -x \
     apk add --update --no-cache \
       icu-dev \
       libzip-dev \
-      nodejs \
-      nodejs-npm \
+      git \
       bash \
       vim \
     && docker-php-ext-install pdo_mysql zip \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && composer update --no-dev \
-    && composer install --no-progress --no-dev \
-    && npm install \
-    && npm run dev
+    && composer install --no-progress --no-dev
 
 RUN set -x \
     && php artisan config:clear \
