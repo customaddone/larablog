@@ -55,11 +55,11 @@ jobs:
 
       # phpの静的解析ツール larastan
       # レベル５（６以上は型宣言要）
-      #- run:
-          #name: static analysis
-          #command: |
-            #composer require --dev nunomaduro/larastan
-            #./vendor/bin/phpstan analyse
+      - run:
+          name: static analysis
+          command: |
+            composer require --dev nunomaduro/larastan
+            ./vendor/bin/phpstan analyse
 
       # unit and browser test
       # guzzle無いとapiのテストできませんよ
@@ -135,10 +135,10 @@ workflows:
   version: 2
   test:
     jobs:
-      #- test
+      - test
       - deploy
-          #requires:
-          #  - test
-          #filters:
-            #branches:
-              #only: master
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
