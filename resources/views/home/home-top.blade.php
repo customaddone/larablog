@@ -4,7 +4,7 @@
     @component('components.header')
     @endcomponent
 
-    あ
+    
 
     @component('components.footer')
     @endcomponent

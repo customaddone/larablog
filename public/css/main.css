@@ -175,3 +175,63 @@ select {
   vertical-align: middle;
 }
 
+header {
+  background-color: #eee;
+}
+
+header .header-main {
+  height: 75px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+header .header-main ul {
+  padding: 25px 0;
+  list-style: none;
+}
+
+header .header-main ul li {
+  display: inline-block;
+}
+
+header .header-main ul li.header-left {
+  width: 5%;
+  float: left;
+}
+
+header .header-main ul li.header-left i {
+  font-size: 1.6rem;
+}
+
+header .header-main ul li.header-center {
+  width: 90%;
+  text-align: center;
+}
+
+header .header-main ul li.header-right {
+  width: 5%;
+  float: right;
+}
+
+header .header-main ul li.header-right .toggle {
+  cursor: pointer;
+  width: 30px;
+}
+
+header .header-main ul li.header-right .toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: #eee;
+}
+

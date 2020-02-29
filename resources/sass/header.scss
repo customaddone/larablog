@@ -1,0 +1,51 @@
+header {
+    background-color: #eee;
+
+    .header-main {
+        height: 75px;
+        width: 96%;
+        margin: 0 auto;
+
+        ul {
+            padding: 25px 0;
+            list-style: none;
+
+            li {
+                display: inline-block;
+
+                &.header-left {
+                    width: 5%;
+                    float: left;
+
+                    i {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                &.header-center {
+                    width: 90%;
+                    text-align: center;
+                }
+
+                &.header-right {
+                    width: 5%;
+                    float: right;
+
+                    .toggle {
+                      cursor: pointer;
+                      width: 30px;
+
+                        span {
+                          width: 30px;
+                          height: 4px;
+                          margin-bottom: 6px;
+                          border-radius: 1000px;
+                          background: #8f8f8f;
+                          display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
