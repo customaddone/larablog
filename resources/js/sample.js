@@ -1,3 +1,7 @@
-module.exports = function() {
-    alert('Hello World!!');
+export function sum(x, y, z) {
+    return x+y+z;
+}
+
+export function multiply(x, y) {
+    return x*y;
 }

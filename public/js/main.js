@@ -19321,15 +19321,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!********************************!*\
   !*** ./resources/js/header.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var sayoh = __webpack_require__(/*! ./sample.js */ "./resources/js/sample.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sample_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sample.js */ "./resources/js/sample.js");
+ // sumモジュールをインポート
 
 var header = new Vue({
   el: '#header',
   mounted: function mounted() {
-    sayoh();
+    alert(Object(_sample_js__WEBPACK_IMPORTED_MODULE_0__["sum"])(1, 2, 3));
   }
 });
 
@@ -19339,12 +19342,19 @@ var header = new Vue({
 /*!********************************!*\
   !*** ./resources/js/sample.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: sum, multiply */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = function () {
-  alert('Hello World!!');
-};
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sum", function() { return sum; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiply", function() { return multiply; });
+function sum(x, y, z) {
+  return x + y + z;
+}
+function multiply(x, y) {
+  return x * y;
+}
 
 /***/ }),
 
