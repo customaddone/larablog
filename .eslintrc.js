@@ -22,13 +22,11 @@ module.exports = {
       "error",
       {
         printWidth: 120,
-        tabWidth: 2,
-        useTabs: false,
+        tabWidth: 4,
+        useTabs: true,
         singleQuote: true,
         trailingComma: 'all',
         bracketSpacing: true,
-        arrowParens: 'avoid',
-        semi: false,
       },
     ]
   }
