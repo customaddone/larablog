@@ -15,16 +15,12 @@ header {
 
                 &.header-left {
                     width: 5%;
+                    margin-left: 20px;
                     float: left;
 
                     i {
                         font-size: 1.6rem;
                     }
-                }
-
-                &.header-center {
-                    width: 90%;
-                    text-align: center;
                 }
 
                 &.header-right {
@@ -43,6 +39,10 @@ header {
                           background: #8f8f8f;
                           display: block;
                         }
+                    }
+
+                    @media (max-width: 750px) {
+                        margin-right: 25px;
                     }
                 }
             }

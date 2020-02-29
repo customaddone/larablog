@@ -196,16 +196,12 @@ header .header-main ul li {
 
 header .header-main ul li.header-left {
   width: 5%;
+  margin-left: 20px;
   float: left;
 }
 
 header .header-main ul li.header-left i {
   font-size: 1.6rem;
-}
-
-header .header-main ul li.header-center {
-  width: 90%;
-  text-align: center;
 }
 
 header .header-main ul li.header-right {
@@ -225,6 +221,12 @@ header .header-main ul li.header-right .toggle span {
   border-radius: 1000px;
   background: #8f8f8f;
   display: block;
+}
+
+@media (max-width: 750px) {
+  header .header-main ul li.header-right {
+    margin-right: 25px;
+  }
 }
 
 html {
