@@ -23,6 +23,9 @@ if (!mix.inProduction()) { // 本番環境ではESLintは使用しない
           exclude: /node_modules/,
           loader: 'eslint-loader',
           test: /\.(js|vue)?$/,
+          options: {
+            fix: true // Lint実行時に自動整形を行うかどうか。（prettierのルールで自動整形してくれる）
+          }
         },
       ],
     },

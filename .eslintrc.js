@@ -19,7 +19,17 @@ module.exports = {
   rules: {
     // この先はPrettierのルール
     "prettier/prettier": [
-      
+      "error",
+      {
+        printWidth: 120,
+        tabWidth: 2,
+        useTabs: false,
+        singleQuote: true,
+        trailingComma: 'all',
+        bracketSpacing: true,
+        arrowParens: 'avoid',
+        semi: false,
+      },
     ]
   }
 }
