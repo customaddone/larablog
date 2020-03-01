@@ -19321,20 +19321,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!********************************!*\
   !*** ./resources/js/header.js ***!
   \********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sample_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sample.js */ "./resources/js/sample.js");
- // sumモジュールをインポート
-
+// import { sum } from './sample.js'; // sumモジュールをインポート
 var header = new Vue({
-  el: '#header',
+  data: {
+    scrollY: 0
+  },
   mounted: function mounted() {
-    alert(Object(_sample_js__WEBPACK_IMPORTED_MODULE_0__["sum"])(1, 2, 3));
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll: function handleScroll() {
+      var title = document.querySelector(".header-main");
+      var rect = title.getBoundingClientRect().top;
+      this.scrollY = rect;
+    }
   }
 });
+header.$mount('header'); // headerオブジェクトを利用しないとエラーが出る
 
 /***/ }),
 

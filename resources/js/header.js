@@ -1,9 +1,18 @@
-import { sum, multiply } from './sample.js'; // sumモジュールをインポート
+// import { sum } from './sample.js'; // sumモジュールをインポート
 
 var header = new Vue({
-	el: '#header',
-
+	data: {
+		scrollY: 0,
+	},
 	mounted: function() {
-		alert(sum(1,2,3));
+		window.addEventListener('scroll', this.handleScroll);
+	},
+	methods: {
+		handleScroll() {
+			const title = document.querySelector(`.header-main`);
+			const rect = title.getBoundingClientRect().top;
+			this.scrollY = rect;
+		},
 	},
 });
+header.$mount('header'); // headerオブジェクトを利用しないとエラーが出る

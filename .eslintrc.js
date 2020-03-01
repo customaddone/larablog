@@ -12,6 +12,9 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/vue',
   ],
+  globals: {
+    Vue: true
+  },
   plugins: [
     'vue',
     'prettier', // prettierをESLintと併用します

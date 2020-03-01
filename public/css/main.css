@@ -181,11 +181,12 @@ header {
 
 header .header-main {
   height: 75px;
-  width: 96%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 header .header-main ul {
+  width: 100%;
+  margin: 0 auto;
   padding: 25px 0;
   list-style: none;
 }
@@ -196,7 +197,8 @@ header .header-main ul li {
 
 header .header-main ul li.header-left {
   width: 5%;
-  margin-left: 20px;
+  margin: auto;
+  padding-left: 20px;
   float: left;
 }
 
@@ -205,13 +207,58 @@ header .header-main ul li.header-left i {
 }
 
 header .header-main ul li.header-right {
-  width: 5%;
+  margin-right: 25px;
   float: right;
 }
 
+header .header-main ul li.header-right .nav-menu {
+  float: right;
+}
+
+header .header-main ul li.header-right .nav-menu .nav-menu-property {
+  display: inline;
+  float: left;
+  margin-right: 15px;
+}
+
+header .header-main ul li.header-right .nav-menu .nav-menu-property p {
+  margin-top: 10px;
+}
+
+header .header-main ul li.header-right .nav-menu .find .search-container {
+  display: block;
+  width: 240px;
+  height: 30px;
+  border-bottom: 1px gainsboro solid;
+}
+
+header .header-main ul li.header-right .nav-menu .find .search-container input {
+  vertical-align: top;
+  margin: 0 0 0 10px;
+  width: 160px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+}
+
+header .header-main ul li.header-right .nav-menu .find .search-container i {
+  float: right;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 750px) {
+  header .header-main ul li.header-right .nav-menu {
+    display: none;
+  }
+}
+
 header .header-main ul li.header-right .toggle {
+  display: none;
   cursor: pointer;
   width: 30px;
+  float: right;
 }
 
 header .header-main ul li.header-right .toggle span {
@@ -224,8 +271,14 @@ header .header-main ul li.header-right .toggle span {
 }
 
 @media (max-width: 750px) {
+  header .header-main ul li.header-right .toggle {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 750px) {
   header .header-main ul li.header-right {
-    margin-right: 25px;
+    width: 15%;
   }
 }
 

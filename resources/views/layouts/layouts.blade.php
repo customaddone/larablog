@@ -16,9 +16,6 @@
     <!-- hrefの書き方間違えると公開側でlinkがhttpになって弾かれるので注意しよう -->
     <link href="/css/main.css" rel="stylesheet" type="text/css">
 
-    <!-- script -->
-    <script src="/js/main.js" type="text/javascript"></script>
-
     <!-- icon -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
