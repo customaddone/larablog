@@ -19317,21 +19317,57 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/sample.js":
+/***/ "./resources/js/header.js":
 /*!********************************!*\
-  !*** ./resources/js/sample.js ***!
+  !*** ./resources/js/header.js ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+// import { sum } from './sample.js'; // sumモジュールをインポート
+var header = new Vue({
+  data: {
+    scrollY: 0
+  },
+  mounted: function mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll: function handleScroll() {
+      var title = document.querySelector(".header-main");
+      var rect = title.getBoundingClientRect().top;
+      this.scrollY = rect;
+    }
+  }
+});
+header.$mount('header'); // headerオブジェクトを利用しないとエラーが出る
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/js/sample.js":
+/*!********************************!*\
+  !*** ./resources/js/sample.js ***!
+  \********************************/
+/*! exports provided: sum, multiply */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sum", function() { return sum; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multiply", function() { return multiply; });
+function sum(x, y, z) {
+  return x + y + z;
+}
+function multiply(x, y) {
+  return x * y;
+}
+
+/***/ }),
+
+/***/ "./resources/sass/main.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/main.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19340,15 +19376,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/sample.js ./resources/sass/app.scss ***!
-  \**************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/sample.js ./resources/js/header.js ./resources/sass/main.scss ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /var/www/html/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /var/www/html/resources/js/sample.js */"./resources/js/sample.js");
-module.exports = __webpack_require__(/*! /var/www/html/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/resources/js/header.js */"./resources/js/header.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/sass/main.scss */"./resources/sass/main.scss");
 
 
 /***/ })

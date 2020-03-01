@@ -1,0 +1,292 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+header {
+  background-color: #eee;
+}
+
+header .header-main {
+  height: 75px;
+  width: 100%;
+}
+
+header .header-main ul {
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0;
+  list-style: none;
+}
+
+header .header-main ul li {
+  display: inline-block;
+}
+
+header .header-main ul li.header-left {
+  width: 5%;
+  margin: auto;
+  padding-left: 20px;
+  float: left;
+}
+
+header .header-main ul li.header-left i {
+  font-size: 1.6rem;
+}
+
+header .header-main ul li.header-right {
+  margin-right: 25px;
+  float: right;
+}
+
+header .header-main ul li.header-right .nav-menu {
+  float: right;
+}
+
+header .header-main ul li.header-right .nav-menu .nav-menu-property {
+  display: inline;
+  float: left;
+  margin-right: 15px;
+}
+
+header .header-main ul li.header-right .nav-menu .nav-menu-property p {
+  margin-top: 10px;
+}
+
+header .header-main ul li.header-right .nav-menu .find .search-container {
+  display: block;
+  width: 240px;
+  height: 30px;
+  border-bottom: 1px gainsboro solid;
+}
+
+header .header-main ul li.header-right .nav-menu .find .search-container input {
+  vertical-align: top;
+  margin: 0 0 0 10px;
+  width: 160px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+}
+
+header .header-main ul li.header-right .nav-menu .find .search-container i {
+  float: right;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 750px) {
+  header .header-main ul li.header-right .nav-menu {
+    display: none;
+  }
+}
+
+header .header-main ul li.header-right .toggle {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  float: right;
+}
+
+header .header-main ul li.header-right .toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+@media (max-width: 750px) {
+  header .header-main ul li.header-right .toggle {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 750px) {
+  header .header-main ul li.header-right {
+    width: 15%;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: #eee;
+}
+

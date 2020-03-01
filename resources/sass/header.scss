@@ -1,0 +1,105 @@
+header {
+    background-color: #eee;
+
+    .header-main {
+        height: 75px;
+        width: 100%;
+
+        ul {
+            width: 100%;
+            margin: 0 auto;
+            padding: 25px 0;
+            list-style: none;
+
+            li {
+                display: inline-block;
+
+                &.header-left {
+                    width: 5%;
+                    margin: auto;
+                    padding-left: 20px;
+                    float: left;
+
+                    i {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                &.header-right {
+
+                    margin-right: 25px;
+                    float: right;
+
+                    .nav-menu {
+                        float: right;
+
+                        .nav-menu-property {
+                            display: inline;
+                            float: left;
+                            margin-right: 15px;
+
+                            p {
+                                margin-top: 10px;
+                            }
+                        }
+
+                        .find {
+                            .search-container {
+                                display: block;
+                                width: 240px;
+                                height: 30px;
+                                border-bottom:  1px gainsboro solid;
+
+                                input {
+                                    vertical-align: top;
+                                    margin: 0 0 0 10px;
+                                    width: 160px;
+                                    height: 100%;
+                                    background-color: transparent;
+                                    border: none;
+                                    outline: 0;
+                                    // 16px以下だとスマホで検索フォームをセレクトするとズームされる
+                                    font-size: 16px;
+                                }
+
+                                i {
+                                    float: right;
+                                    font-size: 1.6rem;
+                                }
+                            }
+                        }
+
+
+                        @media (max-width: 750px) {
+                            display: none;
+                        }
+                    }
+
+                    .toggle {
+                        display: none;
+                        cursor: pointer;
+                        width: 30px;
+                        float: right;
+
+                        span {
+                          width: 30px;
+                          height: 4px;
+                          margin-bottom: 6px;
+                          border-radius: 1000px;
+                          background: #8f8f8f;
+                          display: block;
+                        }
+
+                        @media (max-width: 750px) {
+                            display: inline-block;
+                        }
+                    }
+
+                    @media (max-width: 750px) {
+                        width: 15%;
+                    }
+                }
+            }
+        }
+    }
+}

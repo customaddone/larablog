@@ -34,7 +34,8 @@ if (!mix.inProduction()) { // 本番環境ではESLintは使用しない
 
 mix.js([
         'resources/js/app.js',
-        'resources/js/sample.js'
+        'resources/js/sample.js',
+        'resources/js/header.js',
        ],
-        'public/sample/js')
-    .sass('resources/sass/app.scss', 'public/css');
+        'public/js/main.js')
+    .sass('resources/sass/main.scss', 'public/css');
